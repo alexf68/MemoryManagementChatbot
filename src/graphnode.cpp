@@ -29,19 +29,15 @@ void GraphNode::AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge)
 
 //// STUDENT CODE
 ////
-void GraphNode::MoveChatbotHere(std::unique_ptr<ChatBot> chatbot)
+void GraphNode::MoveChatbotHere(std::shared_ptr<ChatBot> chatbot)
 {
-    std::cout << "Start of MoveChatbotHere" << std::endl;
-    _chatBot = std::move(chatbot);
-    std::cout << "Middle of MoveChatbotHere" << std::endl;
+    _chatBot = chatbot;
     _chatBot->SetCurrentNode(this);
-    std::cout << "End of MoveChatbotHere" << std::endl;
 }
 
 void GraphNode::MoveChatbotToNewNode(GraphNode *newNode)
 {
-    newNode->MoveChatbotHere(std::move(_chatBot));
-    //_chatBot = nullptr; // invalidate pointer at source
+    newNode->MoveChatbotHere(_chatBot);
 }
 ////
 //// EOF STUDENT CODE

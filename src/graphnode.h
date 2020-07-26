@@ -21,7 +21,7 @@ private:
 
     // data handles (not owned)
     std::vector<GraphEdge *> _parentEdges; // edges to preceding nodes 
-    std::unique_ptr<ChatBot> _chatBot;
+    std::shared_ptr<ChatBot> _chatBot;
 
     ////
     //// EOF STUDENT CODE
@@ -50,7 +50,7 @@ public:
     //// STUDENT CODE
     ////
 
-    void MoveChatbotHere(std::unique_ptr<ChatBot> chatbot);
+    void MoveChatbotHere(std::shared_ptr<ChatBot> chatbot);
 
     ////
     //// EOF STUDENT CODE
