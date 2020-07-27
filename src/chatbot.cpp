@@ -32,6 +32,9 @@ ChatBot::ChatBot(std::string filename)
     _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
 }
 
+//// STUDENT CODE
+////
+
 ChatBot::ChatBot(const ChatBot & source) // copy constructor
 {
     std::cout << "ChatBot Copy Constructor" << std::endl;
@@ -86,6 +89,9 @@ ChatBot::~ChatBot()
 {
     std::cout << "ChatBot Destructor" << std::endl;
 }
+
+//// EOF STUDENT CODE
+////
 
 void ChatBot::ReceiveMessageFromUser(std::string message)
 {
