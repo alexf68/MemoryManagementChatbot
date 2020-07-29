@@ -46,14 +46,20 @@ ChatBot::ChatBot(const ChatBot & source) // copy constructor
 
 ChatBot::ChatBot(ChatBot && source) // move constructor
 {
-    std::cout << "ChatBot Move Constructor" << std::endl;
+    //std::cout << "ChatBot Move Constructor" << std::endl;
     _chatLogic = source._chatLogic;
+    //std::cout << "ChatBot Move Constructor Step 1" << std::endl;
     _chatLogic->SetChatbotHandle(this);
+    //std::cout << "ChatBot Move Constructor Step 2" << std::endl;
     _rootNode = source._rootNode;
+    //std::cout << "ChatBot Move Constructor Step 3" << std::endl;
     _image = source._image;
+    //std::cout << "ChatBot Move Constructor Step 4" << std::endl;
     source._chatLogic = nullptr;
+    //std::cout << "ChatBot Move Constructor Step 5" << std::endl;
     source._rootNode = NULL;
-    source._image = nullptr;
+    //std::cout << "ChatBot Move Constructor Step 6" << std::endl;
+    source._image = NULL;
 }
 
 ChatBot & ChatBot::operator=(const ChatBot & source) // copy assignment
@@ -74,20 +80,32 @@ ChatBot & ChatBot::operator=(ChatBot && source) // move assignment
     std::cout << "ChatBot Move Assignment" << std::endl;
     if (&source != this)
     {
+        //std::cout << "ChatBot Move Assignment Step 1" << std::endl;
         _chatLogic = source._chatLogic;
+        //std::cout << "ChatBot Move Assignment Step 2" << std::endl;
         _chatLogic->SetChatbotHandle(this);
+        //std::cout << "ChatBot Move Assignment Step 3" << std::endl;
         _rootNode = source._rootNode;
+        //std::cout << "ChatBot Move Assignment Step 4" << std::endl;
         _image = source._image;
+        //std::cout << "ChatBot Move Assignment Step 5" << std::endl;
         source._chatLogic = nullptr;
+        //std::cout << "ChatBot Move Assignment Step 6" << std::endl;
         source._rootNode = NULL;
-        source._image = nullptr;
+        //std::cout << "ChatBot Move Assignment Step 7" << std::endl;
+        source._image = NULL;
     }
+    std::cout << "ChatBot Move Assignment Step 8" << std::endl;
     return *this;
 }
 
 ChatBot::~ChatBot()
 {
     std::cout << "ChatBot Destructor" << std::endl;
+    if (_image != NULL)
+    {
+        delete _image;
+    }
 }
 
 //// EOF STUDENT CODE
