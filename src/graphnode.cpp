@@ -7,6 +7,7 @@
 GraphNode::GraphNode(int id) : _chatBot(nullptr)
 {
     _id = id;
+    _chatBot = std::make_unique<ChatBot>();
 }
 
 GraphNode::~GraphNode()
@@ -34,7 +35,7 @@ void GraphNode::MoveChatbotHere(ChatBot chatbot)
 {
     //std::cout << "Entering MoveChatbotHere" << std::endl;
     //std::cout << "MoveChatbotHere Step 1" << std::endl;
-    _chatBot.reset(new ChatBot());
+    //_chatBot.reset(new ChatBot());
     //std::cout << "MoveChatbotHere Step 2" << std::endl;
     *_chatBot = std::move(chatbot);
     //std::cout << "MoveChatbotHere Step 2" << std::endl;

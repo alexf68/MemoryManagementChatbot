@@ -95,7 +95,7 @@ ChatBot & ChatBot::operator=(ChatBot && source) // move assignment
         //std::cout << "ChatBot Move Assignment Step 7" << std::endl;
         source._image = NULL;
     }
-    std::cout << "ChatBot Move Assignment Step 8" << std::endl;
+    //std::cout << "ChatBot Move Assignment Step 8" << std::endl;
     return *this;
 }
 
