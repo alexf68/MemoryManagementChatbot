@@ -202,7 +202,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
 
     // add chatbot to graph root node
     chatbot.SetRootNode(rootNode);
-    _chatBot = &chatbot; 
+    //*_chatBot = chatbot; 
     rootNode->MoveChatbotHere(std::move(chatbot));
   
     ////
